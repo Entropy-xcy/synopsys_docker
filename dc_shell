@@ -1,0 +1,9 @@
+docker run -it \
+    --env SNPSLMD_LICENSE_FILE \
+    --net=host -v /usr/synopsys/:/usr/synopsys/ \
+    -v $PWD:/app/ \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=$DISPLAY \
+    -h $HOSTNAME \
+    -v $HOME/.Xauthority:/home/lyonn/.Xauthority \
+    snps_container /usr/synopsys/syn/S-2021.06-SP5-2/bin/dc_shell $@
